@@ -18,6 +18,6 @@ public class InMemoryCarnetRepository implements CarnetRepository {
 
     @Override
     public void sauvegarder(Carnet carnet) {
-        carnets.put(carnet.getId(), carnet);
+        carnets.put(carnet.getId().id, carnet);
     }
 }

@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.catchThrowableOfType;
 
 import java.time.LocalDate;
 
+import com.zenika.vhr.maintenance.domaine.carnet.CarnetId;
 import org.junit.jupiter.api.Test;
 
 import com.zenika.vhr.maintenance.domaine.carnet.Carnet;
@@ -18,7 +19,7 @@ class AjouterInterventionTest {
     void doit_ajouter_intervention() {
         // GIVEN
         // un carnet
-        var carnet = new Carnet();
+        var carnet = new Carnet(new CarnetId("idCarnet"));
         // une intervention
 
         var interventionId = new InterventionId("ID_INTER");

@@ -13,6 +13,8 @@ public class AjouterIntervention {
     private final InterventionRepository interventionRepository;
     private final CarnetRepository carnetRepository;
 
+    private Object queue;
+
     public AjouterIntervention(InterventionMapper interventionMapper, InterventionRepository interventionRepository,
         CarnetRepository carnetRepository) {
         this.interventionMapper = interventionMapper;
@@ -26,10 +28,19 @@ public class AjouterIntervention {
 
         Intervention intervention = interventionMapper.enIntervention(ajouterInterventionDto);
 
-        carnet.getInterventionIdList().add(intervention.getId());
+        carnet.ajouterIntervention(intervention);
 
-        carnetRepository.sauvegarder(carnet);
         interventionRepository.sauvegarder(intervention);
+        carnetRepository.sauvegarder(carnet);
+
+        //sync
+        //new GenererJustificatif().execute();
+
+
+        //async
+        carnet.pullDomainEvents().forEach(event -> {
+            //queue.dispatch(event)  //.callback(function -> success / Failed ?)
+        });
 
     }
 

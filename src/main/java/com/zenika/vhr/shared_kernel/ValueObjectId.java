@@ -2,7 +2,7 @@ package com.zenika.vhr.shared_kernel;
 
 public class ValueObjectId<T> {
 
-    private final T id;
+    public final T id;
 
     protected ValueObjectId(T id) {
 

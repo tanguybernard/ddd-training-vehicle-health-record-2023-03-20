@@ -6,7 +6,6 @@ import com.zenika.vhr.shared_kernel.AggregateRoot;
 
 public class Intervention extends AggregateRoot<InterventionId> {
 
-    private InterventionId id;
     private String nom;
     private DateIntervention dateIntervention;
 

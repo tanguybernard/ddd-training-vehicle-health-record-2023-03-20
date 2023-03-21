@@ -1,4 +1,4 @@
-package com.zenika.vhr.maintenance;
+package com.zenika.vhr.maintenance.domaine;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.catchThrowableOfType;
@@ -12,7 +12,7 @@ import com.zenika.vhr.maintenance.domaine.intervention.DateIntervention;
 import com.zenika.vhr.maintenance.domaine.intervention.Intervention;
 import com.zenika.vhr.maintenance.domaine.intervention.InterventionId;
 
-public class AjouterInterventionTest {
+class AjouterInterventionTest {
 
     @Test
     void doit_ajouter_intervention() {

@@ -5,6 +5,7 @@ import com.zenika.vhr.maintenance.application.mapper.InterventionMapper;
 import com.zenika.vhr.maintenance.domaine.carnet.model.Carnet;
 import com.zenika.vhr.maintenance.domaine.carnet.ports.CarnetRepository;
 import com.zenika.vhr.maintenance.domaine.intervention.Intervention;
+import com.zenika.vhr.maintenance.domaine.intervention.InterventionId;
 import com.zenika.vhr.maintenance.domaine.intervention.InterventionRepository;
 import com.zenika.vhr.shared_kernel.domain_event.DomainEventPublisher;
 
@@ -21,7 +22,7 @@ public class AjouterIntervention {
         this.carnetRepository = carnetRepository;
     }
 
-    public void ajouter(String idCarnet, AjouterInterventionDto ajouterInterventionDto) {
+    public InterventionId ajouter(String idCarnet, AjouterInterventionDto ajouterInterventionDto) {
 
         Carnet carnet = carnetRepository.obtenirCarnet(idCarnet);
 
@@ -38,6 +39,8 @@ public class AjouterIntervention {
 
         //async
         carnet.pullDomainEvents().forEach(DomainEventPublisher::dispatch);
+
+        return intervention.getId();
 
     }
 

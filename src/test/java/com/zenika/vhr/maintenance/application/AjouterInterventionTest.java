@@ -44,7 +44,8 @@ class AjouterInterventionTest {
         Carnet carnet = new Carnet(new CarnetId(ID_CARNET));
         carnetRepository.sauvegarder(carnet);
 
-        var ajouterInterventionDto = new AjouterInterventionDto(LocalDate.of(2023, 3, 21), "Une intervention");
+        LocalDate date = LocalDate.now().plusDays(1);
+        var ajouterInterventionDto = new AjouterInterventionDto(date, "Une intervention");
 
         // WHEN
         ajouterIntervention.ajouter(ID_CARNET, ajouterInterventionDto);

@@ -27,6 +27,8 @@ public class InterventionController {
     ){
         InterventionId idIntervention = this.ajouterIntervention.ajouter(id, dto);
 
+        //Publisher.execute(COMMAND_AJOUTER_INTERVENTION, dto)
+
         return  ResponseEntity
                 .status(HttpStatus.CREATED)
                 .header("Location", "/api/carnets/"+id+"/interventions/"+idIntervention.id)

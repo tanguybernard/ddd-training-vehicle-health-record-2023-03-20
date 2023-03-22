@@ -1,11 +1,10 @@
-package com.zenika.vhr.maintenance.domaine.carnet;
+package com.zenika.vhr.maintenance.domaine.carnet.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-import com.zenika.vhr.maintenance.application.events.InterventionSauvegardeEvent;
+import com.zenika.vhr.maintenance.domaine.carnet.events.InterventionSauvegardeEvent;
 import com.zenika.vhr.maintenance.domaine.intervention.Intervention;
 import com.zenika.vhr.maintenance.domaine.intervention.InterventionId;
 import com.zenika.vhr.shared_kernel.AggregateRoot;
@@ -21,9 +20,10 @@ public class Carnet extends AggregateRoot<CarnetId> {
 
 
     public void ajouterIntervention(Intervention intervention) {
+
+
         interventionIdList.add(intervention.getId());
         this.record(new InterventionSauvegardeEvent(LocalDate.now(), "InterventionSauvegarde", intervention.getId()));
-        //this.bus.dispatch(new InterventionSauvegardeEvent(LocalDate.now(), "InterventionSauvegarde", intervention.getId()));
     }
 
     public CarnetId getId() {

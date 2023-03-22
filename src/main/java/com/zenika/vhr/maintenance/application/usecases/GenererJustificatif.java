@@ -1,4 +1,4 @@
-package com.zenika.vhr.maintenance.application;
+package com.zenika.vhr.maintenance.application.usecases;
 
 public class GenererJustificatif {
 

@@ -4,16 +4,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.time.LocalDate;
 
-import com.zenika.vhr.maintenance.domaine.carnet.CarnetId;
+import com.zenika.vhr.maintenance.application.usecases.AjouterIntervention;
+import com.zenika.vhr.maintenance.domaine.carnet.model.CarnetId;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.zenika.vhr.maintenance.application.dto.AjouterInterventionDto;
 import com.zenika.vhr.maintenance.application.mapper.InterventionMapper;
-import com.zenika.vhr.maintenance.domaine.carnet.Carnet;
-import com.zenika.vhr.maintenance.domaine.carnet.CarnetRepository;
+import com.zenika.vhr.maintenance.domaine.carnet.model.Carnet;
+import com.zenika.vhr.maintenance.domaine.carnet.ports.CarnetRepository;
 import com.zenika.vhr.maintenance.domaine.intervention.InterventionRepository;
 import com.zenika.vhr.maintenance.stubs.InMemoryCarnetRepository;
 import com.zenika.vhr.maintenance.stubs.InMemoryInterventionRepository;

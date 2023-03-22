@@ -1,19 +1,18 @@
-package com.zenika.vhr.maintenance.application;
+package com.zenika.vhr.maintenance.application.usecases;
 
 import com.zenika.vhr.maintenance.application.dto.AjouterInterventionDto;
 import com.zenika.vhr.maintenance.application.mapper.InterventionMapper;
-import com.zenika.vhr.maintenance.domaine.carnet.Carnet;
-import com.zenika.vhr.maintenance.domaine.carnet.CarnetRepository;
+import com.zenika.vhr.maintenance.domaine.carnet.model.Carnet;
+import com.zenika.vhr.maintenance.domaine.carnet.ports.CarnetRepository;
 import com.zenika.vhr.maintenance.domaine.intervention.Intervention;
 import com.zenika.vhr.maintenance.domaine.intervention.InterventionRepository;
+import com.zenika.vhr.shared_kernel.domain_event.DomainEventPublisher;
 
 public class AjouterIntervention {
 
     private final InterventionMapper interventionMapper;
     private final InterventionRepository interventionRepository;
     private final CarnetRepository carnetRepository;
-
-    private Object queue;
 
     public AjouterIntervention(InterventionMapper interventionMapper, InterventionRepository interventionRepository,
         CarnetRepository carnetRepository) {
@@ -38,9 +37,7 @@ public class AjouterIntervention {
 
 
         //async
-        carnet.pullDomainEvents().forEach(event -> {
-            //queue.dispatch(event)  //.callback(function -> success / Failed ?)
-        });
+        carnet.pullDomainEvents().forEach(DomainEventPublisher::dispatch);
 
     }
 

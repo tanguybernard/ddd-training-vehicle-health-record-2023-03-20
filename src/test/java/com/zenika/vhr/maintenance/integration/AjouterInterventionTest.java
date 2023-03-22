@@ -1,16 +1,11 @@
 package com.zenika.vhr.maintenance.integration;
 
-import com.zenika.vhr.maintenance.application.AjouterIntervention;
+import com.zenika.vhr.maintenance.application.usecases.AjouterIntervention;
 import com.zenika.vhr.maintenance.application.dto.AjouterInterventionDto;
-import com.zenika.vhr.maintenance.application.mapper.InterventionMapper;
-import com.zenika.vhr.maintenance.domaine.carnet.Carnet;
-import com.zenika.vhr.maintenance.domaine.carnet.CarnetId;
-import com.zenika.vhr.maintenance.domaine.carnet.CarnetRepository;
+import com.zenika.vhr.maintenance.domaine.carnet.model.Carnet;
+import com.zenika.vhr.maintenance.domaine.carnet.model.CarnetId;
+import com.zenika.vhr.maintenance.domaine.carnet.ports.CarnetRepository;
 import com.zenika.vhr.maintenance.domaine.intervention.InterventionRepository;
-import com.zenika.vhr.maintenance.infrastructure.postgresql.intervention.InterventionPgRepository;
-import com.zenika.vhr.maintenance.stubs.InMemoryCarnetRepository;
-import com.zenika.vhr.maintenance.stubs.InMemoryInterventionRepository;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -43,7 +38,8 @@ class AjouterInterventionTest {
         Carnet carnet = new Carnet(new CarnetId(ID_CARNET));
         carnetRepository.sauvegarder(carnet);
 
-        var ajouterInterventionDto = new AjouterInterventionDto(LocalDate.of(2023, 3, 21), "Une intervention");
+        LocalDate date = LocalDate.now().plusDays(1);
+        var ajouterInterventionDto = new AjouterInterventionDto(date, "Une intervention");
 
         // WHEN
         ajouterIntervention.ajouter(ID_CARNET, ajouterInterventionDto);

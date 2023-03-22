@@ -1,7 +1,6 @@
 package com.zenika.vhr.maintenance.infrastructure.postgresql.intervention;
 
 
-import com.zenika.vhr.maintenance.domaine.carnet.Carnet;
 import com.zenika.vhr.maintenance.infrastructure.postgresql.carnet.CarnetEntity;
 
 import javax.persistence.*;

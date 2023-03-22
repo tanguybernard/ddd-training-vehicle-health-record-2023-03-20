@@ -18,7 +18,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class MyStepTest extends SpringIntegrationTest {
 
 
-    @Given("^user wants to create an account$")
+    @Given("^user wants to create an account")
     public void create_account(DataTable table) throws IOException {
 
         List<Map<String, String>> signUpForms = table.asMaps(String.class, String.class);

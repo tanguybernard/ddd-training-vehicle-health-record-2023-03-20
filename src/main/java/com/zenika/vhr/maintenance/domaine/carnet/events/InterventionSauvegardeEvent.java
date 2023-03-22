@@ -1,10 +1,9 @@
-package com.zenika.vhr.maintenance.application.events;
+package com.zenika.vhr.maintenance.domaine.carnet.events;
 
 import com.zenika.vhr.maintenance.domaine.intervention.InterventionId;
 import com.zenika.vhr.shared_kernel.domain_event.DomainEvent;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class InterventionSauvegardeEvent implements DomainEvent {
 

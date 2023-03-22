@@ -1,8 +1,8 @@
 package com.zenika.vhr.maintenance.configuration;
 
-import com.zenika.vhr.maintenance.application.AjouterIntervention;
+import com.zenika.vhr.maintenance.application.usecases.AjouterIntervention;
 import com.zenika.vhr.maintenance.application.mapper.InterventionMapper;
-import com.zenika.vhr.maintenance.domaine.carnet.CarnetRepository;
+import com.zenika.vhr.maintenance.domaine.carnet.ports.CarnetRepository;
 import com.zenika.vhr.maintenance.domaine.intervention.InterventionRepository;
 import com.zenika.vhr.maintenance.infrastructure.postgresql.carnet.CarnetDao;
 import com.zenika.vhr.maintenance.infrastructure.postgresql.carnet.CarnetPgRepository;

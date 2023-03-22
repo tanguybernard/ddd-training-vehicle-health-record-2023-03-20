@@ -1,16 +1,12 @@
 package com.zenika.vhr.maintenance.infrastructure.postgresql.carnet;
 
-import com.zenika.vhr.maintenance.domaine.carnet.Carnet;
-import com.zenika.vhr.maintenance.domaine.carnet.CarnetId;
-import com.zenika.vhr.maintenance.domaine.carnet.CarnetRepository;
-import com.zenika.vhr.maintenance.domaine.intervention.Intervention;
+import com.zenika.vhr.maintenance.domaine.carnet.model.Carnet;
+import com.zenika.vhr.maintenance.domaine.carnet.model.CarnetId;
+import com.zenika.vhr.maintenance.domaine.carnet.ports.CarnetRepository;
 import com.zenika.vhr.maintenance.domaine.intervention.InterventionId;
-import com.zenika.vhr.maintenance.domaine.intervention.InterventionRepository;
 import com.zenika.vhr.maintenance.infrastructure.postgresql.intervention.InterventionEntity;
-import com.zenika.vhr.maintenance.infrastructure.postgresql.intervention.InterventionPgMapper;
 
 import java.util.ArrayList;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class CarnetPgRepository implements CarnetRepository {

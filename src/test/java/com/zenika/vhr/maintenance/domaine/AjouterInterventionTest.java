@@ -5,10 +5,10 @@ import static org.assertj.core.api.Assertions.catchThrowableOfType;
 
 import java.time.LocalDate;
 
-import com.zenika.vhr.maintenance.domaine.carnet.CarnetId;
+import com.zenika.vhr.maintenance.domaine.carnet.model.CarnetId;
 import org.junit.jupiter.api.Test;
 
-import com.zenika.vhr.maintenance.domaine.carnet.Carnet;
+import com.zenika.vhr.maintenance.domaine.carnet.model.Carnet;
 import com.zenika.vhr.maintenance.domaine.intervention.DateIntervention;
 import com.zenika.vhr.maintenance.domaine.intervention.Intervention;
 import com.zenika.vhr.maintenance.domaine.intervention.InterventionId;

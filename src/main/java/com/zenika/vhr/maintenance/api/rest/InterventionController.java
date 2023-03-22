@@ -1,4 +1,4 @@
-package com.zenika.vhr.maintenance.api;
+package com.zenika.vhr.maintenance.api.rest;
 
 import com.zenika.vhr.maintenance.application.dto.AjouterInterventionDto;
 import com.zenika.vhr.maintenance.application.usecases.AjouterIntervention;
